@@ -1,2 +1,2 @@
 # cireng_seuhah
-Cireng isi oaling enak di Bandung
+Cireng isi paling enak di Bandung
