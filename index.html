@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cireng Seuhah - Cemilan Seru Saat Kumpul Bareng Keluarga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-red: #DC143C;
+            --dark-red: #B91226;
+            --light-red: #FF6B6B;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: var(--primary-red) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            color: white !important;
+            font-size: 1.4rem;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: var(--dark-red);
+            border-radius: 5px;
+        }
+        
+        .navbar-toggler {
+            border-color: white;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 100px 0 80px;
+            margin-top: 76px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .varian-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .varian-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
+        }
+        
+        .varian-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .varian-card .card-body {
+            background: white;
+            padding: 20px;
+        }
+        
+        .varian-card .card-title {
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .btn-order {
+            background-color: var(--primary-red);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-order:hover {
+            background-color: var(--dark-red);
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .contact-box:hover {
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.2);
+        }
+        
+        .contact-box i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+        
+        .outlet-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .outlet-card h4 {
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .outlet-card .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+        
+        .outlet-card .info-item i {
+            color: var(--primary-red);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .map-btn {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .map-btn:hover {
+            background-color: var(--dark-red);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: var(--dark-red);
+            color: white;
+            padding: 30px 0;
+            margin-top: 80px;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--light-red);
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="img/logo.png" alt="Cireng Seuhah Logo" class="logo">
+                <span>Cireng Seuhah</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#varian">Varian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pemesanan">Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#outlet">Outlet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1>Cireng Seuhah</h1>
+            <p class="lead">CEMILAN SERU Saat kumpul bareng keluarga</p>
+            <a href="#pemesanan" class="btn-order">Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Varian Section -->
+    <section id="varian" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Varian Rasa Kami</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/mozzarella.jpeg" alt="Mozzarella">
+                        <div class="card-body">
+                            <h5 class="card-title">MOZZARELLA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/jando pedas.jpeg" alt="Jando Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">JANDO PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/ayam pedas.jpeg" alt="Ayam Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">AYAM PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/ayam keju pedas.jpeg" alt="Ayam Keju Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">AYAM KEJU PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/kornet pedas.jpeg" alt="Kornet Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">KORNET PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/ati ayam pedas.jpeg" alt="Ati Ayam Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">ATI AYAM PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/logo.png" alt="Keju Cheddar">
+                        <div class="card-body">
+                            <h5 class="card-title">KEJU CHEDAR</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/bakso pedas.jpeg" alt="Bakso Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">BAKSO PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/ayam original.jpeg" alt="Ayam Original">
+                        <div class="card-body">
+                            <h5 class="card-title">AYAM ORIGINAL</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/logo.png" alt="Usus Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">USUS PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="varian-card card">
+                        <img src="img/logo.png" alt="Seblak Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">SEBLAK PEDAS</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pemesanan Section -->
+    <section id="pemesanan" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Cara Pemesanan</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="bi bi-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>Pesan langsung melalui WhatsApp</p>
+                        <a href="https://wa.me/6289655373979?text=Hallooo!%0AMau%20pesan%20Cireng%20Seuhah-nya%20dong%20kak!" target="_blank" class="btn-order">089655373979</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="bi bi-bag-check"></i>
+                        <h4>Go-Food</h4>
+                        <p>Pesan melalui aplikasi Go-Food</p>
+                        <p class="fw-bold mb-0">Cireng Seuhah Bandung, Panyileukan</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-box">
+                        <i class="bi bi-cart3"></i>
+                        <h4>Shopee Food</h4>
+                        <p>Pesan melalui aplikasi Shopee Food</p>
+                        <p class="fw-bold mb-0">cirengseuhah</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="fs-5"><i class="bi bi-instagram text-danger"></i> Follow Instagram: <a href="https://instagram.com/cireng_sseuhah" target="_blank" class="text-decoration-none fw-bold" style="color: var(--primary-red);">@cireng_sseuhah</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outlet Section -->
+    <section id="outlet" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Lokasi Outlet Kami</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="outlet-card">
+                        <h4><i class="bi bi-geo-alt-fill"></i> Cabang 1 - Panyileukan</h4>
+                        <div class="info-item">
+                            <i class="bi bi-pin-map"></i>
+                            <div>
+                                <strong>Alamat:</strong><br>
+                                Depan Toko Kelontongan/Toko Puja<br>
+                                Jl. Raya Panyileukan No.26 Blok C.5<br>
+                                Cipadung Kidul, Kec. Panyileukan<br>
+                                Kota Bandung, Jawa Barat 40614
+                            </div>
+                            
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-clock"></i>
+                            <div>
+                                <strong>Jam Operasional:</strong><br>
+                                Senin - Sabtu: 11.00 - 20.00<br>
+                                Minggu: Tutup
+                            </div>
+                        </div>
+                        <div class="peta" align="center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14810.016085877212!2d107.71548244665837!3d-6.936932508196018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c3f431d91fab%3A0x9d2545c2b3b3f09e!2sCireng%20Seuhah%20Bandung!5e0!3m2!1sid!2sid!4v1761142053720!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/WgTt5WbzZXTma5Jq9" target="_blank" class="map-btn">
+                            <i class="bi bi-map"></i> Lihat di Google Maps
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="outlet-card">
+                        <h4><i class="bi bi-geo-alt-fill"></i> Cabang 2 - Kampus UIN</h4>
+                        <div class="info-item">
+                            <i class="bi bi-pin-map"></i>
+                            <div>
+                                <strong>Alamat:</strong><br>
+                                Kawasan Kampus 1 UIN SGD Bandung<br>
+                                Jl A.H Nasution.485a<br>
+                                RT 002/005, Kec. Cibiru<br>
+                                Kota Bandung, Jawa Barat 40614
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-clock"></i>
+                            <div>
+                                <strong>Jam Operasional:</strong><br>
+                                Senin - Sabtu: 11.00 - 20.00<br>
+                                Minggu: Tutup
+                            </div>
+                        </div>
+                        <div class="peta" align="center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6536245508682!2d107.71265111018673!3d-6.931938493039032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c348f702bc8f%3A0xa27260cedf9cf90c!2sCireng%20Seuhah%20Bandung!5e0!3m2!1sid!2sid!4v1761142289572!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/mXXbahnSLWXNh34E6" target="_blank" class="map-btn">
+                            <i class="bi bi-map"></i> Lihat di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h4>Cireng Seuhah</h4>
+            <p class="mb-3">CEMILAN SERU Saat kumpul bareng keluarga</p>
+            <div class="mb-3">
+                <a href="https://instagram.com/cireng_sseuhah" target="_blank" class="social-link mx-2">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://wa.me/6289655373979?text=Hallooo!%0AMau%20pesan%20Cireng%20Seuhah-nya%20dong%20kak!" target="_blank" class="social-link mx-2">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+            <p class="mb-0">&copy; 2025 Cireng Seuhah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll untuk navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Tutup navbar mobile setelah klik
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
