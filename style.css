@@ -1,0 +1,34 @@
+/* --- CSS Tambahan untuk Scrolling Otomatis --- */
+
+.review-slider-wrapper {
+    overflow: hidden; /* Sembunyikan konten di luar area ini */
+    padding: 20px 0; /* Padding vertikal agar terlihat bagus */
+}
+
+.review-slider {
+    display: flex; /* Gunakan flexbox untuk menata kartu secara horizontal */
+    width: max-content; /* Pastikan lebar cukup besar untuk menampung semua kartu */
+    animation: scroll-reviews 30s linear infinite; /* Animasi scroll */
+}
+
+.review-slider:hover {
+    animation-play-state: paused; /* Jeda animasi saat mouse hover */
+}
+
+.review-slider .col-lg-4, 
+.review-slider .col-md-6 {
+    /* Atur lebar kartu agar tidak menggunakan sistem grid Bootstrap penuh */
+    flex: 0 0 320px; /* Lebar tetap untuk setiap kartu */
+    margin-right: 20px; /* Jarak antar kartu */
+}
+
+/* Animasi Pergerakan */
+@keyframes scroll-reviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Gulir sejauh 50% untuk menciptakan efek loop */
+}
+
+/* Penyesuaian agar kartu tidak terpotong saat scroll dimulai/berakhir */
+.review-slider-track {
+    display: flex;
+}
